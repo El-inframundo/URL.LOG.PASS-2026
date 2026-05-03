@@ -38,6 +38,9 @@ body{background:#0a0a0c;color:#e4e4e7;font-family:'Segoe UI',system-ui,sans-seri
 .seo-content p{font-size:13px;color:#a1a1aa;line-height:1.7;margin-bottom:8px}
 .seo-content p:last-child{margin-bottom:0}
 .footer{text-align:center;color:#52525b;font-size:11px;padding:16px;width:100%;max-width:800px}
+/* === small grid for 5 download buttons === */
+.download-buttons{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.download-buttons .download-btn{flex:0 1 auto;min-width:140px}
 @media(max-width:480px){.header h1{font-size:18px}.download-btn{width:100%;justify-content:center}}
 </style>
 </head>
@@ -64,14 +67,22 @@ body{background:#0a0a0c;color:#e4e4e7;font-family:'Segoe UI',system-ui,sans-seri
     </div>
   </div>
 
+  <!-- ================================================================ -->
+  <!-- ============= DOWNLOAD BOX — 5 separate buttons ================ -->
+  <!-- ================================================================ -->
   <div class="download-box">
-    <h3>Download link
-</h3>
-    <a class="download-btn" href="#" id="downloadLink">
-      <span>⬇</span> Download
-    </a>
+    <h3>Download links</h3>
+    <div class="download-buttons">
+      <!-- Each button uses its own data-url (set from JS below) -->
+      <a class="download-btn" href="#" data-dl="1"><span>⬇</span> Download 1</a>
+      <a class="download-btn" href="#" data-dl="2"><span>⬇</span> Download 2</a>
+      <a class="download-btn" href="#" data-dl="3"><span>⬇</span> Download 3</a>
+      <a class="download-btn" href="#" data-dl="4"><span>⬇</span> Download 4</a>
+      <a class="download-btn" href="#" data-dl="5"><span>⬇</span> Download 5</a>
+    </div>
     <div class="download-info"></div>
   </div>
+  <!-- ================================================================ -->
 
   <div class="features">
     <div class="feature">
@@ -131,21 +142,29 @@ body{background:#0a0a0c;color:#e4e4e7;font-family:'Segoe UI',system-ui,sans-seri
 
 <script>
 // ================================================================
-// ================== رابط التحميل الفعلي =========================
+// ========== 5 روابط تحميل منفصلة — عدل كل رابط هنا =============
 // ================================================================
-// غير الرابط الموجود تحت إلى رابط التحميل الحقيقي
-// مثال: 'https://uploady.io/1s6ys35vw0fk/200_TEMPLEATES.rar'
+// كل رابط له متغير مستقل — ضع الرابط الحقيقي داخل النص بين ''
 // ================================================================
-const DOWNLOAD_URL = '';
+const DOWNLOAD_URL_1 = '';
+const DOWNLOAD_URL_2 = '';
+const DOWNLOAD_URL_3 = '';
+const DOWNLOAD_URL_4 = '';
+const DOWNLOAD_URL_5 = '';
 // ================================================================
 
-// Ad Gate: عند النقر على زر التحميل
+// Ad Gate: عند النقر على أي زر تحميل
 document.addEventListener('click', function(e) {
-  const link = e.target.closest('#downloadLink');
+  const link = e.target.closest('.download-btn[data-dl]');
   if (!link) return;
 
-  if (!DOWNLOAD_URL) {
-    alert('❌ لم يتم إضافة رابط التحميل بعد — اذهب إلى الكود وأضف الرابط في المتغير DOWNLOAD_URL');
+  // قرأنا أي زر تم النقر عليه عن طريق data-dl
+  const idx = link.getAttribute('data-dl');
+  const urls = [null, DOWNLOAD_URL_1, DOWNLOAD_URL_2, DOWNLOAD_URL_3, DOWNLOAD_URL_4, DOWNLOAD_URL_5];
+  const url = urls[idx];
+
+  if (!url) {
+    alert('❌ لم يتم إضافة رابط التحميل بعد — اذهب إلى الكود وأضف الرابط في المتغير DOWNLOAD_URL_' + idx);
     return;
   }
 
@@ -159,7 +178,7 @@ document.addEventListener('click', function(e) {
   // ================================================================
 
   setTimeout(function() {
-    window.location.href = DOWNLOAD_URL;
+    window.location.href = url;
   }, 100);
 });
 </script>
