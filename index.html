@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Download Center</title>
-<meta name="description" content="Download files and resources.">
 <meta name="robots" content="index, follow">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -38,11 +37,18 @@ body{background:#0a0a0c;color:#e4e4e7;font-family:'Segoe UI',system-ui,sans-seri
 <body>
 
 <div class="container">
+
+  <!-- ============================================================ -->
+  <!-- HEADER                                                        -->
+  <!-- ============================================================ -->
   <div class="header">
     <h1>Download links</h1>
     <p>The links are constantly updated</p>
   </div>
 
+  <!-- ============================================================ -->
+  <!-- STATS BAR                                                     -->
+  <!-- ============================================================ -->
   <div class="stats">
     <div class="stat">
       <div class="num">5</div>
@@ -58,45 +64,53 @@ body{background:#0a0a0c;color:#e4e4e7;font-family:'Segoe UI',system-ui,sans-seri
     </div>
   </div>
 
-  <!-- ================================================================ -->
-  <!-- ====================== DOWNLOAD BOX ============================ -->
-  <!-- ================================================================ -->
+  <!-- ============================================================ -->
+  <!-- DOWNLOAD BOX — 5 BUTTONS                                     -->
+  <!-- ============================================================ -->
+  <!--
+    IMPORTANT: The download URLs are NOT set here.
+    Scroll down to the JavaScript section and edit the 5 variables
+    named DOWNLOAD_URL_1 through DOWNLOAD_URL_5.
+    Each button below is linked to its matching variable.
+  -->
   <div class="download-box">
     <h3>Download links</h3>
 
-    <!-- Download 1 -->
+    <!-- Download button 1 -> uses DOWNLOAD_URL_1 in JavaScript -->
     <a class="download-btn" href="#" id="downloadLink1" style="margin-bottom:10px">
       <span>⬇</span> Download 1
     </a>
     <br>
 
-    <!-- Download 2 -->
+    <!-- Download button 2 -> uses DOWNLOAD_URL_2 in JavaScript -->
     <a class="download-btn" href="#" id="downloadLink2" style="margin-bottom:10px">
       <span>⬇</span> Download 2
     </a>
     <br>
 
-    <!-- Download 3 -->
+    <!-- Download button 3 -> uses DOWNLOAD_URL_3 in JavaScript -->
     <a class="download-btn" href="#" id="downloadLink3" style="margin-bottom:10px">
       <span>⬇</span> Download 3
     </a>
     <br>
 
-    <!-- Download 4 -->
+    <!-- Download button 4 -> uses DOWNLOAD_URL_4 in JavaScript -->
     <a class="download-btn" href="#" id="downloadLink4" style="margin-bottom:10px">
       <span>⬇</span> Download 4
     </a>
     <br>
 
-    <!-- Download 5 -->
+    <!-- Download button 5 -> uses DOWNLOAD_URL_5 in JavaScript -->
     <a class="download-btn" href="#" id="downloadLink5">
       <span>⬇</span> Download 5
     </a>
 
     <div class="download-info"></div>
   </div>
-  <!-- ================================================================ -->
 
+  <!-- ============================================================ -->
+  <!-- FEATURES GRID                                                 -->
+  <!-- ============================================================ -->
   <div class="features">
     <div class="feature">
       <div class="icon">🎨</div>
@@ -120,26 +134,83 @@ body{background:#0a0a0c;color:#e4e4e7;font-family:'Segoe UI',system-ui,sans-seri
     </div>
   </div>
 
-  <!-- ================================================================ -->
-  <!-- ====================== AD PLACEHOLDER ========================== -->
-  <!-- ================================================================ -->
-  <!-- Replace this entire box with your ad code (Adsterra, RichAds, etc.) -->
-  <!-- ================================================================ -->
+  <!-- ============================================================ -->
+  <!-- AD PLACEHOLDER (OPTIONAL — DELETE & PASTE YOUR AD CODE HERE)  -->
+  <!-- ============================================================ -->
+  <!-- Adnan ads -->
+  <!--
+    TO ADD YOUR AD:
+    1. Delete everything from <!-- Adnan ads --> down to the closing comment line below.
+    2. Paste your ad network code (Adsterra, RichAds, etc.) in its place.
+    3. The ad will appear between the features grid and the link info sections.
+  -->
   <div class="placeholder-box">
     <div class="label">📢 Advertisement</div>
-    <div class="note">Replace this box with your ad code</div>
+    <div class="note">Delete this entire box and paste your ad code here</div>
   </div>
-  <!-- ================================================================ -->
+  <!-- ============================================================ -->
+
+  <!-- ============================================================ -->
+  <!-- LINK INFO SECTIONS (OPTIONAL — VISUAL ONLY)                   -->
+  <!-- ============================================================ -->
+  <!--
+    These 5 boxes are just for visual reference on the page.
+    They do NOT control the download buttons in any way.
+    The real download URLs must be set inside the JavaScript below
+    (the DOWNLOAD_URL_1 to DOWNLOAD_URL_5 variables).
+
+    You can:
+    - Delete any of these boxes if you don't want them.
+    - Keep them to show extra info about each download.
+    - The download buttons above will work regardless.
+  -->
+
+  <!-- Adnan links 1 -> corresponds to DOWNLOAD_URL_1 -->
+  <div class="placeholder-box">
+    <div class="label">🔗 Download Link 1</div>
+    <div class="note">Visual reference only. Set the real URL in DOWNLOAD_URL_1 (JavaScript below).</div>
+  </div>
+
+  <!-- Adnan links 2 -> corresponds to DOWNLOAD_URL_2 -->
+  <div class="placeholder-box">
+    <div class="label">🔗 Download Link 2</div>
+    <div class="note">Visual reference only. Set the real URL in DOWNLOAD_URL_2 (JavaScript below).</div>
+  </div>
+
+  <!-- Adnan links 3 -> corresponds to DOWNLOAD_URL_3 -->
+  <div class="placeholder-box">
+    <div class="label">🔗 Download Link 3</div>
+    <div class="note">Visual reference only. Set the real URL in DOWNLOAD_URL_3 (JavaScript below).</div>
+  </div>
+
+  <!-- Adnan links 4 -> corresponds to DOWNLOAD_URL_4 -->
+  <div class="placeholder-box">
+    <div class="label">🔗 Download Link 4</div>
+    <div class="note">Visual reference only. Set the real URL in DOWNLOAD_URL_4 (JavaScript below).</div>
+  </div>
+
+  <!-- Adnan links 5 -> corresponds to DOWNLOAD_URL_5 -->
+  <div class="placeholder-box">
+    <div class="label">🔗 Download Link 5</div>
+    <div class="note">Visual reference only. Set the real URL in DOWNLOAD_URL_5 (JavaScript below).</div>
+  </div>
+
+  <!-- ============================================================ -->
 
   <div class="footer">Download Center</div>
+
 </div>
 
 <script>
 // ================================================================
-// ====== EDIT YOUR 5 DOWNLOAD URLS BELOW =========================
+// ⚡ THE ONLY THING YOU NEED TO EDIT — YOUR 5 DOWNLOAD URLs
 // ================================================================
-// Each constant corresponds to the button with the same number.
-// Leave empty ('') and the button will alert that no URL is set.
+// Each URL below is linked to the matching download button above.
+//
+// IMPORTANT RULES:
+// - Keep the quotes ('') around each URL.
+// - Example: const DOWNLOAD_URL_1 = 'https://example.com/file.rar';
+// - Leave empty ('') to disable that button (shows an alert on click).
 // ================================================================
 const DOWNLOAD_URL_1 = '';
 const DOWNLOAD_URL_2 = '';
@@ -147,8 +218,10 @@ const DOWNLOAD_URL_3 = '';
 const DOWNLOAD_URL_4 = '';
 const DOWNLOAD_URL_5 = '';
 // ================================================================
+// DO NOT EDIT ANYTHING BELOW THIS LINE unless you know what you're doing.
+// ================================================================
 
-// Map each download button ID to its URL
+// Map each button ID to its URL variable
 const downloadMap = {
   downloadLink1: DOWNLOAD_URL_1,
   downloadLink2: DOWNLOAD_URL_2,
@@ -157,7 +230,10 @@ const downloadMap = {
   downloadLink5: DOWNLOAD_URL_5,
 };
 
-// Ad gate: triggered on any download button click
+// ================================================================
+// DOWNLOAD CLICK HANDLER
+// Flow: Opens ad/popunder first (optional), then redirects.
+// ================================================================
 document.addEventListener('click', function(e) {
   const link = e.target.closest('a[id^="downloadLink"]');
   if (!link) return;
@@ -165,19 +241,22 @@ document.addEventListener('click', function(e) {
   const url = downloadMap[link.id];
 
   if (!url) {
-    alert('❌ No download URL set — edit the corresponding DOWNLOAD_URL_X variable in the JavaScript.');
+    alert('No download URL set. Edit DOWNLOAD_URL_' + link.id.slice(-1) + ' in the JavaScript section above.');
     return;
   }
 
   e.preventDefault();
 
-  // ================================================================
-  // ====== OPTIONAL: Open ad/popunder before redirect ==============
-  // ================================================================
-  // Uncomment and replace with your ad URL:
+  // ==============================================================
+  // OPTIONAL: OPEN AD / POPUNDER BEFORE REDIRECT
+  // ==============================================================
+  // To enable, delete the "//" in front of the line below and
+  // replace 'https://your-ad-url.com' with your actual ad URL.
+  // ==============================================================
   // window.open('https://your-ad-url.com', '_blank');
-  // ================================================================
+  // ==============================================================
 
+  // Short delay to let the ad open, then send the visitor to the download
   setTimeout(function() {
     window.location.href = url;
   }, 100);
