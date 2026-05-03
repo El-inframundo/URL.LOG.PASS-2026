@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,63 +27,149 @@ body{background:#0a0a0c;color:#e4e4e7;font-family:'Segoe UI',system-ui,sans-seri
 .feature .icon{font-size:24px;margin-bottom:8px}
 .feature .title{font-size:13px;color:#e4e4e7;font-weight:600}
 .feature .desc{font-size:11px;color:#a1a1aa;margin-top:4px}
+.placeholder-box{background:#121216;border:2px dashed #3b82f6;border-radius:12px;padding:20px;margin-bottom:20px;text-align:center;min-height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.placeholder-box .label{font-size:14px;color:#3b82f6;font-weight:600;margin-bottom:6px}
+.placeholder-box .note{font-size:12px;color:#a1a1aa}
 .footer{text-align:center;color:#52525b;font-size:11px;padding:16px;width:100%;max-width:800px}
+@media(max-width:480px){.header h1{font-size:18px}.download-btn{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
 
 <div class="container">
 
-<div class="header">
-<h1>Download links</h1>
-<p>The links are constantly updated</p>
-</div>
+  <!-- ============================================================ -->
+  <!-- HEADER                                                        -->
+  <!-- ============================================================ -->
+  <div class="header">
+    <h1>Download links</h1>
+    <p>The links are constantly updated</p>
+  </div>
 
-<div class="stats">
-<div class="stat"><div class="num">1</div><div class="lbl">File</div></div>
-<div class="stat"><div class="num">RAR</div><div class="lbl">Format</div></div>
-<div class="stat"><div class="num">Direct</div><div class="lbl">Type</div></div>
-</div>
+  <!-- ============================================================ -->
+  <!-- STATS BAR                                                     -->
+  <!-- ============================================================ -->
+  <div class="stats">
+    <div class="stat">
+      <div class="num">1</div>
+      <div class="lbl">File</div>
+    </div>
+    <div class="stat">
+      <div class="num">TXT</div>
+      <div class="lbl">Format</div>
+    </div>
+    <div class="stat">
+      <div class="num">Varied</div>
+      <div class="lbl">Size</div>
+    </div>
+  </div>
 
-<div class="download-box">
-<h3>Download</h3>
+  <!-- ============================================================ -->
+  <!-- DOWNLOAD BOX — 1 BUTTON ONLY                                 -->
+  <!-- ============================================================ -->
+  <div class="download-box">
+    <h3>Download links</h3>
 
-<a class="download-btn" href="#" id="downloadLink1">
-<span>⬇</span> Download File
-</a>
+    <!-- Download button 1 -> uses DOWNLOAD_URL_1 in JavaScript -->
+    <a class="download-btn" href="#" id="downloadLink1" style="margin-bottom:10px">
+      <span>⬇</span> Download 1
+    </a>
 
-</div>
+    <div class="download-info"></div>
+  </div>
 
-<div class="features">
-<div class="feature"><div class="icon">⚡</div><div class="title">Fast</div></div>
-<div class="feature"><div class="icon">📱</div><div class="title">Mobile Ready</div></div>
-<div class="feature"><div class="icon">🔒</div><div class="title">Secure</div></div>
-</div>
+  <!-- ============================================================ -->
+  <!-- FEATURES GRID                                                 -->
+  <!-- ============================================================ -->
+  <div class="features">
+    <div class="feature">
+      <div class="icon">🎨</div>
+      <div class="title">Modern Design</div>
+      <div class="desc">Clean & professional layouts</div>
+    </div>
+    <div class="feature">
+      <div class="icon">📱</div>
+      <div class="title">Fully Responsive</div>
+      <div class="desc">Works on all devices</div>
+    </div>
+    <div class="feature">
+      <div class="icon">⚡</div>
+      <div class="title">Lightweight</div>
+      <div class="desc">Fast loading speed</div>
+    </div>
+    <div class="feature">
+      <div class="icon">🔧</div>
+      <div class="title">Easy to Edit</div>
+      <div class="desc">Well-commented code</div>
+    </div>
+  </div>
 
-<div class="footer">Download Center</div>
-
-</div>
-
-<!-- ADS -->
-<script type="text/javascript" data-cfasync="false">
+  <!-- ============================================================ -->
+  <!-- AD 1 — PopAds                                                 -->
+  <!-- ============================================================ -->
+  <script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
 (function(){var k=window,n="af6458a4dd843924b8fff2296df49704",d=[["siteId",662+64*832+366+480+4624181],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],v=["d3d3LnZpc2FyaW9tZWRpYS5jb20veWRvdGRvdGRvdC5jc3M=","ZDEzazdwcmF4MXlpMDQuY2xvdWRmcm9udC5uZXQvWmJUV2ZyL2xlbWJlci5taW4uanM="],s=-1,u,a,j=function(){clearTimeout(a);s++;if(v[s]&&!(1803756020000<(new Date).getTime()&&1<s)){u=k.document.createElement("script");u.type="text/javascript";u.async=!0;var y=k.document.getElementsByTagName("script")[0];u.src="https://"+atob(v[s]);u.crossOrigin="anonymous";u.onerror=j;u.onload=function(){clearTimeout(a);k[n.slice(0,16)+n.slice(0,16)]||j()};a=setTimeout(j,5E3);y.parentNode.insertBefore(u,y)}};if(!k[n]){try{Object.freeze(k[n]=d)}catch(e){}j()}})();
+/*]]>/* */
 </script>
 
-<script src="https://richinfo.co/richpartners/pops/js/richads-pu-ob.js" data-pubid="1010155" data-siteid="395927" async data-cfasync="false"></script>
+  <!-- ============================================================ -->
+  <!-- AD 2 — RichAds                                                -->
+  <!-- ============================================================ -->
+  <script src="https://richinfo.co/richpartners/pops/js/richads-pu-ob.js" data-pubid="1010155" data-siteid="395927" async data-cfasync="false"></script>
 
-<script src="https://pl29322504.profitablecpmratenetwork.com/90/18/8f/90188f0d6788c590542b7a83bead4749.js"></script>
+  <!-- ============================================================ -->
+  <!-- AD 3 — Adsterra                                               -->
+  <!-- ============================================================ -->
+  <script src="https://pl29322504.profitablecpmratenetwork.com/90/18/8f/90188f0d6788c590542b7a83bead4749.js"></script>
+
+  <!-- ============================================================ -->
+  <!-- LINK INFO SECTION                                            -->
+  <!-- ============================================================ -->
+  <div class="placeholder-box">
+    <div class="label">🔗 Download Link</div>
+    <div class="note">https://ddownload.com/fpt91idop39j/URL-LOG-PASS.txt</div>
+  </div>
+
+  <!-- ============================================================ -->
+
+  <div class="footer">Download Center</div>
+
+</div>
 
 <script>
+// ================================================================
+// ⚡ DOWNLOAD URL — ONLY ONE
+// ================================================================
 const DOWNLOAD_URL_1 = 'https://ddownload.com/fpt91idop39j/URL-LOG-PASS.txt';
+// ================================================================
 
-document.getElementById('downloadLink1').addEventListener('click', function(e){
-e.preventDefault();
-setTimeout(function(){
-window.location.href = DOWNLOAD_URL_1;
-},100);
+// Map each button ID to its URL variable
+const downloadMap = {
+  downloadLink1: DOWNLOAD_URL_1,
+};
+
+// ================================================================
+// DOWNLOAD CLICK HANDLER
+// ================================================================
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[id^="downloadLink"]');
+  if (!link) return;
+
+  const url = downloadMap[link.id];
+
+  if (!url) {
+    alert('No download URL set.');
+    return;
+  }
+
+  e.preventDefault();
+
+  setTimeout(function() {
+    window.location.href = url;
+  }, 100);
 });
 </script>
 
 </body>
 </html>
-```
