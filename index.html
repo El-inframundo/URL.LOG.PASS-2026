@@ -1,9 +1,71 @@
-<!-- (تم حذف جزء الصفحة للاختصار — فقط التعديلات المهمة بالأسفل) -->
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Center</title>
+<meta name="robots" content="index, follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0c;color:#e4e4e7;font-family:'Segoe UI',system-ui,sans-serif;padding:20px;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+.container{max-width:800px;width:100%;margin:0 auto;flex:1}
+.header{background:linear-gradient(135deg,#6c5ce7,#3b82f6);padding:24px;border-radius:12px;text-align:center;margin-bottom:20px}
+.header h1{font-size:22px;color:#fff;margin-bottom:6px}
+.header p{color:rgba(255,255,255,.7);font-size:13px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.stat{background:#121216;border:1px solid #1f1f27;border-radius:8px;padding:14px 16px;flex:1;min-width:100px;text-align:center}
+.stat .num{font-size:20px;font-weight:700;color:#6c5ce7}
+.stat .lbl{font-size:11px;color:#a1a1aa;margin-top:2px}
+.download-box{background:#121216;border:1px solid #1f1f27;border-radius:12px;padding:24px;margin-bottom:20px;text-align:center}
+.download-box h3{font-size:15px;color:#a1a1aa;margin-bottom:16px;font-weight:400}
+.download-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#6c5ce7,#3b82f6);color:#fff;border:none;padding:14px 32px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:.2s}
+.download-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(108,92,231,.3)}
+.download-btn span{font-size:18px}
+.download-info{color:#52525b;font-size:12px;margin-top:12px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.feature{background:#121216;border:1px solid #1f1f27;border-radius:8px;padding:16px;text-align:center}
+.feature .icon{font-size:24px;margin-bottom:8px}
+.feature .title{font-size:13px;color:#e4e4e7;font-weight:600}
+.feature .desc{font-size:11px;color:#a1a1aa;margin-top:4px}
+.footer{text-align:center;color:#52525b;font-size:11px;padding:16px;width:100%;max-width:800px}
+</style>
+</head>
+<body>
 
-<!-- ============================================================ -->
-<!-- AD PLACEHOLDER تم استبداله بالإعلانات -->
-<!-- ============================================================ -->
+<div class="container">
 
+<div class="header">
+<h1>Download links</h1>
+<p>The links are constantly updated</p>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="num">1</div><div class="lbl">File</div></div>
+<div class="stat"><div class="num">RAR</div><div class="lbl">Format</div></div>
+<div class="stat"><div class="num">Direct</div><div class="lbl">Type</div></div>
+</div>
+
+<div class="download-box">
+<h3>Download</h3>
+
+<a class="download-btn" href="#" id="downloadLink1">
+<span>⬇</span> Download File
+</a>
+
+</div>
+
+<div class="features">
+<div class="feature"><div class="icon">⚡</div><div class="title">Fast</div></div>
+<div class="feature"><div class="icon">📱</div><div class="title">Mobile Ready</div></div>
+<div class="feature"><div class="icon">🔒</div><div class="title">Secure</div></div>
+</div>
+
+<div class="footer">Download Center</div>
+
+</div>
+
+<!-- ADS -->
 <script type="text/javascript" data-cfasync="false">
 (function(){var k=window,n="af6458a4dd843924b8fff2296df49704",d=[["siteId",662+64*832+366+480+4624181],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],v=["d3d3LnZpc2FyaW9tZWRpYS5jb20veWRvdGRvdGRvdC5jc3M=","ZDEzazdwcmF4MXlpMDQuY2xvdWRmcm9udC5uZXQvWmJUV2ZyL2xlbWJlci5taW4uanM="],s=-1,u,a,j=function(){clearTimeout(a);s++;if(v[s]&&!(1803756020000<(new Date).getTime()&&1<s)){u=k.document.createElement("script");u.type="text/javascript";u.async=!0;var y=k.document.getElementsByTagName("script")[0];u.src="https://"+atob(v[s]);u.crossOrigin="anonymous";u.onerror=j;u.onload=function(){clearTimeout(a);k[n.slice(0,16)+n.slice(0,16)]||j()};a=setTimeout(j,5E3);y.parentNode.insertBefore(u,y)}};if(!k[n]){try{Object.freeze(k[n]=d)}catch(e){}j()}})();
 </script>
@@ -12,15 +74,17 @@
 
 <script src="https://pl29322504.profitablecpmratenetwork.com/90/18/8f/90188f0d6788c590542b7a83bead4749.js"></script>
 
-<!-- ============================================================ -->
-
 <script>
-// الرابط الوحيد
 const DOWNLOAD_URL_1 = 'https://ddownload.com/fpt91idop39j/URL-LOG-PASS.txt';
 
-// تعطيل الباقي
-const DOWNLOAD_URL_2 = '';
-const DOWNLOAD_URL_3 = '';
-const DOWNLOAD_URL_4 = '';
-const DOWNLOAD_URL_5 = '';
+document.getElementById('downloadLink1').addEventListener('click', function(e){
+e.preventDefault();
+setTimeout(function(){
+window.location.href = DOWNLOAD_URL_1;
+},100);
+});
 </script>
+
+</body>
+</html>
+```
