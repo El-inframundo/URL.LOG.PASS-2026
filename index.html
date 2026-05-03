@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL:LOG:PASS - Private Database</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0c;color:#e4e4e7;font-family:'Segoe UI',system-ui,sans-serif;padding:20px}
+.container{max-width:800px;margin:0 auto}
+.header{background:linear-gradient(135deg,#6c5ce7,#3b82f6);padding:20px;border-radius:12px;text-align:center;margin-bottom:20px}
+.header h1{font-size:20px;color:#fff}
+.header p{color:rgba(255,255,255,.7);font-size:13px;margin-top:4px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.stat{background:#121216;border:1px solid #1f1f27;border-radius:8px;padding:12px 16px;flex:1;min-width:100px;text-align:center}
+.stat .num{font-size:18px;font-weight:700;color:#6c5ce7}
+.stat .lbl{font-size:11px;color:#a1a1aa;margin-top:2px}
+.content-box{background:#121216;border:1px solid #1f1f27;border-radius:12px;padding:20px;margin-bottom:16px}
+.content-box h3{font-size:14px;color:#a1a1aa;margin-bottom:10px}
+pre{background:#0d0d10;border:1px solid #1f1f27;border-radius:8px;padding:16px;font-size:12px;color:#e4e4e7;overflow-x:auto;white-space:pre-wrap;word-break:break-all;max-height:600px;overflow-y:auto;font-family:'Courier New',monospace}
+.btn{background:linear-gradient(135deg,#6c5ce7,#3b82f6);color:#fff;border:none;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;width:100%;margin-top:12px}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(108,92,231,.3)}
+.copy-msg{color:#10b981;font-size:12px;text-align:center;margin-top:6px;display:none}
+.footer{text-align:center;color:#52525b;font-size:11px;margin-top:20px;padding:12px}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>📂 URL:LOG:PASS Database</h1>
+    <p>Private collection</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="num" id="fileSize">0 MB</div>
+      <div class="lbl">Size</div>
+    </div>
+    <div class="stat">
+      <div class="num">TXT</div>
+      <div class="lbl">Type</div>
+    </div>
+    <div class="stat">
+      <div class="num" id="lineCount">0</div>
+      <div class="lbl">Entries</div>
+    </div>
+  </div>
+
+  <div class="content-box">
+    <h3>📋 Content:</h3>
+    <pre id="content">Loading content...</pre>
+  </div>
+
+  <button class="btn" onclick="copyContent()">📋 Copy Full Content</button>
+  <div class="copy-msg" id="copyMsg">✅ Copied!</div>
+</div>
+
+<div class="footer">© 2024 — Private Database</div>
+
+<script>
+// ================================================================
+// >>>>>>> PUT YOUR RAW FILE URL HERE <<<<<<<
+// ================================================================
+const RAW_URL = 'https://gist.githubusercontent.com/El-inframundo/2cdfef6c4e860a0c0e224f44bf733940/raw/787261d14f8e02abc9d81249f2a9df7d00c661f9/gistfile1.txt';
+
+const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
+
+let FILE_CONTENT = '';
+
+async function loadAllFiles() {
+  const contentEl = document.getElementById('content');
+  contentEl.textContent = 'Loading...';
+
+  if (!RAW_URL) {
+    contentEl.textContent = 'Error: URL is empty!';
+    return;
+  }
+
+  try {
+    try {
+      const res = await fetch(RAW_URL);
+      if (res.ok) {
+        FILE_CONTENT = await res.text();
+        displayContent();
+        return;
+      }
+    } catch(e) {
+      console.log('Direct fetch failed, trying proxy...');
+    }
+
+    const res = await fetch(PROXY_URL + RAW_URL);
+    if (!res.ok) throw new Error('Proxy fetch failed');
+
+    FILE_CONTENT = await res.text();
+    displayContent();
+
+  } catch (err) {
+    contentEl.textContent = 'Error: Failed to load content\n\nMake sure URL is correct and file is publicly accessible';
+  }
+}
+
+function displayContent() {
+  if (!FILE_CONTENT) return;
+
+  document.getElementById('content').textContent = FILE_CONTENT;
+  const lines = FILE_CONTENT.split('\n').filter(l => l.trim()).length;
+  document.getElementById('lineCount').textContent = lines;
+  const sizeKB = (new Blob([FILE_CONTENT]).size / 1024).toFixed(1);
+  document.getElementById('fileSize').textContent = sizeKB + ' KB';
+}
+
+function copyContent() {
+  if (!FILE_CONTENT) {
+    alert('Content not loaded yet. Please wait.');
+    return;
+  }
+
+  navigator.clipboard.writeText(FILE_CONTENT).then(() => {
+    const msg = document.getElementById('copyMsg');
+    msg.style.display = 'block';
+    setTimeout(() => msg.style.display = 'none', 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = FILE_CONTENT;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const msg = document.getElementById('copyMsg');
+    msg.style.display = 'block';
+    setTimeout(() => msg.style.display = 'none', 2000);
+  });
+}
+
+loadAllFiles();
+</script>
+
+<!-- RichAds Pops Notification -->
+<script src="https://richinfo.co/richpartners/pops/js/richads-pu-ob.js" data-pubid="1010155" data-siteid="395855" async data-cfasync="false"></script>
+
+<!-- RichAds In-Page Ads -->
+<script src="https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=1010155&siteid=395791" async></script>
+
+</body>
+</html>
